@@ -11,6 +11,10 @@ import CondicionalRender from './components/CondicionalRender'
 import ShowUserName from './components/ShowUserName'
 import './App.css'
 import CarDetails from './components/CarDetails'
+import './global.css';
+import { Outlet } from 'react-router-dom' //Reaproveitamento de estrutura
+import Navbar from './components/Navbar' //Navegar entre lnks
+import Footer from './components/Footer'
 
 
 function App() {
@@ -28,12 +32,16 @@ function App() {
 
   return (
     <>
-      <div>
-        <img src={cr7Image} alt="Cristiano Ronaldo" title='CR7' /> {/* kjhbbkjb */}
+    {/* <div>
+        <img src={cr7Image} alt="Cristiano Ronaldo" title='CR7' /> 
       </div>
       <div>
         <img src="/JPG-Alta-Qualidade.jpg" alt="Descrição da imagem" />
-      </div>
+      </div> 
+    */} 
+      <Navbar />
+      <Outlet />
+      {/*
       <FirstComponent />
       <TemplateExpressions />
       <MyComponent />
@@ -50,7 +58,9 @@ function App() {
         km={car.km}
         />
       ))}
-      {/* Niguggi*/}
+      
+      */}
+      <Footer />
     </>
   )
 }
